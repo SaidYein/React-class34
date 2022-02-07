@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.App {
+  text-align: center;
+  display: flex;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(29, 28, 28);
+  font-size: 16px;
+  max-width: 1024px;
+}
+.container {
+  margin: 36px;
+  max-width: 300px;
+}
+.container p {
+  font-size: 12px;
+  color: rgb(31, 30, 30);
+  padding: 10px;
+}
+.container img {
+  height: 96px;
+  padding: 20px;
+}
