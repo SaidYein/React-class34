@@ -15,9 +15,7 @@
 .list {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 50%;
-
   background-color: #a52a2a;
   border-radius: 10px;
 }
@@ -36,4 +34,9 @@
 .emoji {
   margin: 0;
   font-size: 48px;
+}
+
+li {
+  margin-right: 20px;
+  list-style: none;
 }

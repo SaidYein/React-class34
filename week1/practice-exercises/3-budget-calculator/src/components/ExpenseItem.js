@@ -1,7 +1,7 @@
 import React from "react";
 import { MdEdit, MdDelete } from "react-icons/md";
 
-export const ExpenseItem = ({ expense, handleDelete, handleEdit }) => {
+const ExpenseItem = ({ expense, handleDelete, handleEdit }) => {
   const { id, charge, amount } = expense;
   return (
     <li className="item">
@@ -28,3 +28,5 @@ export const ExpenseItem = ({ expense, handleDelete, handleEdit }) => {
     </li>
   );
 };
+
+export default ExpenseItem

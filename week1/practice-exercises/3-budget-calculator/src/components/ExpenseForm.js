@@ -1,7 +1,7 @@
 import React from "react";
 import { MdSend } from "react-icons/md";
 
-export const ExpenseForm = ({
+const ExpenseForm = ({
   charge,
   amount,
   handleCharge,
@@ -44,3 +44,5 @@ export const ExpenseForm = ({
     </form>
   );
 };
+
+export default ExpenseForm;

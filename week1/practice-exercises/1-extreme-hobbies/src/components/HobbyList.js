@@ -12,9 +12,13 @@ const HobbyList = () => {
   return (
     <div className="list">
       <h2> EXTREME HOBBIES </h2>
-      {hobbies.map((hobby, index) => (
-        <Hobby item={hobby} key={index} emoji={emojis[index]} />
-      ))}
+      <ul>
+        {hobbies.map((hobby, index) => (
+          <li>
+            <Hobby item={hobby} key={index} emoji={emojis[index]} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

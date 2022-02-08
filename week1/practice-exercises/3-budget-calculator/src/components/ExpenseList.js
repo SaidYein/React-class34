@@ -1,13 +1,8 @@
 import React from "react";
-import { ExpenseItem } from "./ExpenseItem";
+import ExpenseItem from "./ExpenseItem";
 import { MdDelete } from "react-icons/md";
 
-export const ExpenseList = ({
-  expenses,
-  handleDelete,
-  handleEdit,
-  clearItems,
-}) => {
+const ExpenseList = ({ expenses, handleDelete, handleEdit, clearItems }) => {
   return (
     <>
       <ul className="list">
@@ -30,3 +25,5 @@ export const ExpenseList = ({
     </>
   );
 };
+
+export default ExpenseList;

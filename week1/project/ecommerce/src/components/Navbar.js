@@ -1,5 +1,4 @@
 import React from "react";
-import categories from "../fake-data/all-categories";
 
 const Navbar = ({ handleCategory, categories }) => {
   return (
