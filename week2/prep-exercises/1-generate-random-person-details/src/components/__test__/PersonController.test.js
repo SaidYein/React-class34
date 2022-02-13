@@ -26,7 +26,6 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 it("renders correctly if fetch is successful", async () => {
-  server;
   render(<PersonController />);
   // await waitFor(() => screen.findByRole("div"));
 
