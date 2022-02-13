@@ -12,7 +12,7 @@ const PersonController = () => {
 
   const getPerson = async () => {
     try {
-      const res = await fetch("https://www.randomuser.me/api?results=1");
+      const res = await fetch("https://www.randomuser.me/api");
       const data = await res.json();
       const { name, email } = data.results[0];
       const personObj = [
@@ -26,9 +26,9 @@ const PersonController = () => {
       //clear the div after every request to show Spinner Loader
       setPerson([]);
       // used setTimeout to mimic a delay
-      setTimeout(() => {
-        setPerson(personObj);
-      }, 2000);
+      // setTimeout(() => {
+      setPerson(personObj);
+      // }, 2000);
     } catch (error) {
       setError("Fetching Data Failed");
       console.log(error);
@@ -39,12 +39,7 @@ const PersonController = () => {
     return <Error error={error} />;
   } else if (person.length > 0) {
     return person.map((person, index) => (
-      <Person
-        key={index}
-        person={person}
-        getPerson={getPerson}
-        data-testid={`person-item-${index}`}
-      />
+      <Person key={index} person={person} getPerson={getPerson} />
     ));
   } else {
     return <h1>Loading...</h1>;
