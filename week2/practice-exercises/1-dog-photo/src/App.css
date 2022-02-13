@@ -1,0 +1,10 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 22rem;
+  margin: 64px auto;
+  text-align: center;
+}
+.message {
+  font-size: 20px;
+}
