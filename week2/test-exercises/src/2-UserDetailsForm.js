@@ -15,7 +15,7 @@ function UserDetailsForm({ initialUserValues, onSubmit }) {
   const [role, setRole] = useState(initialUserValues.role);
 
   return (
-    <div>
+    <div data-testid="form">
       <label>
         First name:
         <input
