@@ -32,6 +32,9 @@ h1 {
 .navItem:active {
   transform: translateY(3px);
 }
+ul.productList {
+  list-style: none;
+}
 .productList {
   display: grid;
   grid-template-columns: repeat(4, 25%);

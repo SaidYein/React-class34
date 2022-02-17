@@ -5,11 +5,11 @@ const ProductList = ({ products, isLoading }) => {
   return isLoading ? (
     <Spinner />
   ) : (
-    <div className="productList">
+    <ul className="productList">
       {products.map((product) => {
         return <Product key={product.id} product={product} />;
       })}
-    </div>
+    </ul>
   );
 };
 

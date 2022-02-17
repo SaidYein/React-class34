@@ -15,7 +15,6 @@ const RandomJoke = () => {
       .get(BASE_URL)
       .then((res) => res.data.contents.jokes[0].joke)
       .then((data) => setJoke(data));
-    // .catch((error) => console.log(error));
   };
 
   return (

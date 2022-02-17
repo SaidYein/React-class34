@@ -1,6 +1,8 @@
+import Spinner from "./Loader/Loader";
+
 const Navbar = ({ handleList, categories, isLoading }) => {
   return isLoading ? (
-    <p style={{ textAlign: "center" }}>Getting categories....</p>
+    <Spinner />
   ) : (
     <ul className="navbar">
       {categories.map((item, index) => {
