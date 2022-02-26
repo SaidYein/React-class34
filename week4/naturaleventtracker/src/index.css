@@ -19,13 +19,11 @@ body {
 
   grid-template-rows: auto;
   grid-template-areas:
-    "header header header "
     "sidebar sidebar main "
     "footer footer footer ";
 }
 
 .header {
-  grid-area: header;
   background-color: var(--component-color);
   color: var(--dark-font);
   margin-bottom: 10px;
@@ -51,6 +49,17 @@ body {
   grid-area: sidebar;
   justify-self: start;
   background-color: var(--component-color);
+}
+
+.sidebar {
+  width: 60%;
+  margin: 0;
+  list-style: none;
+  padding-top: 36px;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
 }
 
 .location-icon {

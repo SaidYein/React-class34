@@ -1,32 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Icon } from "@iconify/react";
+import { FetchContext } from "./context/FetchContext";
+import Loader from "./Loader";
 
 const SideBar = () => {
-  return (
-    <div className="sidebar">
-      <form type="submit">
-        <p>Please select an Natural event to display:</p>
-        <input type="radio" id="wildfire" name="nat_event" value="Wildfire" />
-        <label>Wildfire</label>
-        <br />
-        <input type="radio" id="storm" name="nat_event" value="Storm" />
-        <label>
-          <Icon
-            className="location-icon "
-            icon="carbon:tropical-storm-tracks"
-          />
-          Storm
-        </label>
-        <br />
-        <input
-          type="radio"
-          id="earthquake"
-          name="nat_event"
-          value="EarthQuake"
-        />
-        <label>EarthQuake</label>
-      </form>
-    </div>
+  const { categories } = useContext(FetchContext);
+  const { loading } = useContext(FetchContext);
+
+  // console.log(categories);
+  return loading ? (
+    <Loader />
+  ) : (
+    <ul className="sidebar">
+      {categories &&
+        categories.map((event) => {
+          return (
+            <li>
+              <input type="radio" id={event} name="nat_event" value={event} />
+              <label>{event}</label>
+            </li>
+          );
+        })}
+    </ul>
   );
 };
 
