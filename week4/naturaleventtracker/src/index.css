@@ -1,0 +1,74 @@
+:root {
+  --background-color: #212032;
+  --component-color: #36e1ff;
+  --logo-color: #c2f970;
+  --dark-font: #212429;
+  --light-font: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 10px;
+  font-family: "Arial, Helvetica, sans-serif";
+  background-color: var(--background-color);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 24% 6% 70%;
+
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header "
+    "sidebar sidebar main "
+    "footer footer footer ";
+}
+
+.header {
+  grid-area: header;
+  background-color: var(--component-color);
+  color: var(--dark-font);
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-size: 25px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.map {
+  grid-area: main;
+  justify-self: center;
+  width: 90%;
+  height: 70vh;
+  background-color: yellowgreen;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  justify-self: start;
+  background-color: var(--component-color);
+}
+
+.location-icon {
+  font-size: 2rem;
+  color: red;
+}
+
+.event-info {
+  position: absolute;
+  width: 400px;
+  min-height: 150px;
+  padding: 20px;
+  background: rgba(242, 95, 92, 0.6);
+  border: 1px solid var(--background-color);
+  color: var(--light-font);
+  font-size: 16px;
+}
+
+.footer {
+  color: var(--light-font);
+}
