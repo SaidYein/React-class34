@@ -1,4 +1,4 @@
-const EventInfo = ({ locationInfo, infoPosition }) => {
+const EventInfo = ({ locationInfo }) => {
   return (
     <div className="event-info">
       <h2> Event Info</h2>

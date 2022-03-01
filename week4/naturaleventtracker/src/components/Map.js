@@ -5,17 +5,14 @@ import EventInfo from "./EventInfo";
 
 const Map = ({ eventData, center, zoom }) => {
   const [locationInfo, setLocationInfo] = useState(null);
-  // const [infoPosition, setInfoPosition] = useState(null);
-
+  // console.log(eventData);
   const markers = eventData.map((event) => {
     return (
       <LocationMarker
         lat={event.geometries[0].coordinates[1]}
         lng={event.geometries[0].coordinates[0]}
-        onClick={(e) => {
-          // console.log(e);
-          // setInfoPosition({ x: e.ClientX, y: e.ClientY });
-          setLocationInfo({ id: event.id, title: event.title });
+        onClick={() => {
+          setLocationInfo({ id: event.categories[0].id, title: event.title });
         }}
       />
     );
