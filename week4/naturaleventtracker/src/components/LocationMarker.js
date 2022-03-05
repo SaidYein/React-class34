@@ -1,10 +1,7 @@
-import { Icon } from "@iconify/react";
-import targetIcon from "@iconify/icons-mdi/target";
-
-const LocationMarker = ({ lat, lng, onClick }) => {
+const LocationMarker = ({ onClick, icon }) => {
   return (
-    <div className="location-marker" onClick={onClick}>
-      <Icon icon={targetIcon} className="location-icon" />
+    <div className={`icons ${icon.class}`} onClick={onClick}>
+      {icon.icon}
     </div>
   );
 };

@@ -1,81 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,700;1,400&family=Nunito:ital,wght@0,400;0,500;1,200;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
 :root {
-  --background-color: #212032;
-  --component-color: #36e1ff;
-  --logo-color: #c2f970;
-  --dark-font: #212429;
-  --light-font: #ffffff;
+  --background-color: rgb(4, 21, 31);
+  --primary-component-color: rgba(98, 23, 8, 0.8);
+  --secondary-component-color: rgba(6, 167, 125, 0.8);
+  --dark-font: rgb(21, 22, 22);
+  --light-font: rgb(250, 244, 247);
+  --primary-font-family: "Nunito", sans-serif;
+  --secondary-font-family: "Cabin", sans-serif;
 }
 
 body {
   margin: 0;
   padding: 10px;
-  font-family: "Arial, Helvetica, sans-serif";
   background-color: var(--background-color);
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 24% 6% 70%;
-
-  grid-template-rows: auto;
-  grid-template-areas:
-    "sidebar sidebar main "
-    "footer footer footer ";
+.loader {
+  position: fixed;
+  top: 30%;
+  left: 50%;
 }
 
 .header {
-  background-color: var(--component-color);
-  color: var(--dark-font);
+  background-color: var(--primary-component-color);
+  color: var(--light-font);
   margin-bottom: 10px;
 }
 
 .header h1 {
-  font-size: 25px;
+  font-size: 3rem;
+  font-family: var(--primary-font-family);
+  font-weight: lighter;
   padding: 0;
   margin: 0;
   overflow: hidden;
   text-align: center;
 }
 
+.header span {
+  font-size: 1rem;
+  font-family: var(--secondary-font-family);
+  color: var(--light-font);
+}
+
 .map {
-  grid-area: main;
-  justify-self: center;
-  width: 90%;
-  height: 70vh;
-  background-color: yellowgreen;
+  width: 100%;
+  height: 90vh;
+  z-index: -99;
 }
 
 .sidebar {
-  grid-area: sidebar;
-  justify-self: start;
-  background-color: var(--component-color);
-}
-
-.sidebar {
-  width: 60%;
+  position: absolute;
+  top: 120px;
+  left: 60px;
   margin: 0;
   list-style: none;
-  padding-top: 36px;
+  padding: 18px;
+  background-color: var(--primary-component-color);
+  border-radius: 10px;
+  border: 2px solid var(--background-color);
 }
 
 .sidebar li {
+  padding: 0;
   margin-bottom: 10px;
 }
 
-.location-icon {
-  font-size: 2rem;
-  color: red;
+.eventButton {
+  font-size: 1rem;
+  padding: 8px;
+  background: none;
+  border-style: none;
+  color: var(--light-font);
+  font-family: var(--secondary-font-family);
 }
 
-.event-info {
-  position: absolute;
-  width: 400px;
+.eventButton:hover {
+  cursor: pointer;
+  border-bottom: 2px solid var(--light-font);
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(111, 6, 121, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(240, 197, 7, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+.severeStorms {
+  color: #032b43;
+}
+.wildfires {
+  color: #d00000;
+}
+.volcanoes {
+  color: #523301;
+}
+.seaAndLakeIce {
+  color: #3476ad;
+}
+
+.infoContainer {
+  width: 300px;
   min-height: 150px;
-  padding: 20px;
-  background: rgba(242, 95, 92, 0.6);
-  border: 1px solid var(--background-color);
+  padding: 8px;
+  font-size: 1rem;
+  font-family: var(--primary-font-family);
+  background-color: var(--secondary-component-color);
+  border: 3px solid var(--background-color);
+  border-radius: 10px;
+  border-top-left-radius: 0px;
   color: var(--light-font);
-  font-size: 16px;
+}
+.infoContainer h2 {
+  color: var(--dark-font);
+  font-family: var(--secondary-font-family);
+  margin-bottom: 10px;
+}
+
+.infoContainer a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: #012e22cc;
+}
+.infoContainer a:hover {
+  color: #000000cc;
+  border-bottom: 2px solid #000000cc;
+}
+.closeButton {
+  font-size: 1.3rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+}
+.closeButton:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  font-weight: bolder;
 }
 
 .footer {

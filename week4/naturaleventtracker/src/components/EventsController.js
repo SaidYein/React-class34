@@ -19,7 +19,7 @@ function EventsController() {
     return selectedEvents.eventArray.includes(event.categories[0].title);
   });
 
-  console.log(filteredEvents);
+  // console.log(filteredEvents);
 
   return (
     <div className="container">

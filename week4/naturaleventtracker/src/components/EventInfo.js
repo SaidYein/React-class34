@@ -1,16 +1,27 @@
-const EventInfo = ({ locationInfo }) => {
+const EventInfo = ({ data }) => {
+  const { locationInfo, isVisible, setIsVisible } = data;
   return (
-    <div className="event-info">
-      <h2> Event Info</h2>
-      <ul>
-        <li>
-          ID: <strong>{locationInfo.id}</strong>
-        </li>
-        <li>
-          TITLE: <strong>{locationInfo.title}</strong>
-        </li>
-      </ul>
-    </div>
+    isVisible && (
+      <div
+        className="infoContainer"
+        style={{
+          position: "absolute",
+          left: locationInfo.x + "px",
+          top: locationInfo.y + "px",
+        }}
+      >
+        <h2> {locationInfo.title} </h2>
+        <div className="eventInfo">
+          <p>{locationInfo.date.replace("T", " - ").replace("Z", "")}</p>
+          <p>Longitude: {locationInfo.coordinates[0]}</p>
+          <p>Latitude:{locationInfo.coordinates[1]}</p>
+          <a href={locationInfo.link}> Click here to learn more! </a>
+        </div>
+        <button className="closeButton" onClick={() => setIsVisible(false)}>
+          X
+        </button>
+      </div>
+    )
   );
 };
 
