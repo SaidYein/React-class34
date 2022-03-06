@@ -19,8 +19,6 @@ function EventsController() {
     return selectedEvents.eventArray.includes(event.categories[0].title);
   });
 
-  // console.log(filteredEvents);
-
   return (
     <div className="container">
       {!loading ? <Map eventData={filteredEvents} /> : <Loader />}

@@ -22,10 +22,15 @@ const SideBar = () => {
       });
     }
   };
-  // console.log(selectedEvents);
-  return (
-    <>
-      <ul className="sidebar">
+
+  return loading ? (
+    <Loader />
+  ) : (
+    <div className="sidebar">
+      <div className="categoryTitle">
+        <h2>Categories</h2>
+      </div>
+      <ul>
         {categories &&
           categories.map((event) => {
             return (
@@ -35,7 +40,7 @@ const SideBar = () => {
             );
           })}
       </ul>
-    </>
+    </div>
   );
 };
 
