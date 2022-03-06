@@ -38,6 +38,16 @@ const Footer = () => {
             <li>
               <a href="https://eonet.gsfc.nasa.gov"> EONET (NASA)</a>
             </li>
+            <li>
+              <a href="https://earthdata.nasa.gov">
+                Earth Science Data Systems
+              </a>
+            </li>
+            <li>
+              <a href="https://earthobservatory.nasa.gov">
+                NASA Earth Observatory
+              </a>
+            </li>
           </ul>
         </div>
         <div className="footerNews">

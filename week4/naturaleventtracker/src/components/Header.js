@@ -1,12 +1,18 @@
 import { RiTornadoLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="header">
+      {window.location.href.indexOf("events") !== -1 ? (
+        <button className="backButton">
+          <Link to="/"> Back </Link>{" "}
+        </button>
+      ) : (
+        ""
+      )}
       <h1>
-        <RiTornadoLine
-          style={{ width: "2rem", height: "2rem", marginRight: "64px" }}
-        />
+        <RiTornadoLine className="headerIcon" />
         Natural Event Tracker <span>(Powered by NASA)</span>
       </h1>
     </header>

@@ -2,7 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 :root {
@@ -16,9 +16,10 @@
 }
 
 body {
-  margin: 0;
   padding: 10px;
   background-color: var(--background-color);
+  font-family: var(--primary-font-family);
+  min-width: 600px;
 }
 
 .loader {
@@ -31,21 +32,92 @@ body {
   background-color: var(--primary-component-color);
   color: var(--light-font);
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
 }
-
+.headerIcon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 64px;
+}
 .header h1 {
+  flex: 2;
   font-size: 3rem;
-  font-family: var(--primary-font-family);
   font-weight: lighter;
   padding: 0;
-  margin: 0;
-  overflow: hidden;
-  text-align: center;
+  margin-left: 20px;
 }
 
 .header span {
   font-size: 1rem;
   font-family: var(--secondary-font-family);
+  color: var(--light-font);
+}
+.mainPage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--light-font);
+}
+.mainPageInfo {
+  height: 400px;
+  padding: 5% 10%;
+  overflow-y: scroll;
+}
+.mainPageInfo::-webkit-scrollbar {
+  display: none;
+}
+
+.mainPageInfo ul {
+  margin: 20px auto;
+  text-align: center;
+  list-style-type: none;
+}
+.footerButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 64px;
+  width: 128px;
+  height: 64px;
+  background-color: var(--secondary-component-color);
+  border: none;
+  border-radius: 6px;
+}
+
+.mainPageInfo {
+  width: 90%;
+  background-color: var(--secondary-component-color);
+}
+
+.eventPageButton {
+  width: 90%;
+  background-color: var(--primary-component-color);
+  border: none;
+  height: 64px;
+  font-size: 2rem;
+  margin: 24px 5%;
+  border-radius: 6px;
+}
+
+.backButton {
+  font-size: 1rem;
+  width: 64px;
+  height: 32px;
+  background-color: var(--secondary-component-color);
+  border: none;
+  border-radius: 6px;
+}
+
+.backButton a,
+.eventPageButton a {
+  text-decoration: none;
   color: var(--light-font);
 }
 
@@ -59,9 +131,18 @@ body {
   height: 90vh;
   z-index: -99;
 }
-
+.hoverInfo {
+  position: fixed;
+  text-align: center;
+  top: 30px;
+  width: 200px;
+  font-size: 0.8rem;
+  color: var(--dark-font);
+  background-color: rgba(255, 255, 255, 0.6);
+}
 .sidebar {
   position: absolute;
+  width: 200px;
   top: 120px;
   left: 60px;
   margin: 0;
@@ -69,17 +150,19 @@ body {
   background-color: var(--primary-component-color);
   border-radius: 10px;
   border: 2px solid var(--background-color);
+  color: var(--light-font);
 }
 .categoryTitle {
   width: 100%;
+  text-align: center;
   background-color: rgba(240, 240, 240, 0.2);
 }
 .sidebar h2 {
-  color: var(--light-font);
-  margin-bottom: 10px;
-  padding: 10px 24px;
+  padding-top: 6px;
 }
-
+.sidebar span {
+  font-size: 0.8rem;
+}
 .sidebar li {
   list-style: none;
   padding: 0;
@@ -146,7 +229,6 @@ body {
   min-height: 150px;
   padding: 8px;
   font-size: 1rem;
-  font-family: var(--primary-font-family);
   background-color: var(--secondary-component-color);
   border: 3px solid var(--background-color);
   border-radius: 10px;
@@ -176,6 +258,7 @@ body {
   background-color: transparent;
   border: none;
   border-radius: 6px;
+  color: var(--light-font);
 }
 .closeButton:hover,
 .contactLogo:hover {
@@ -223,4 +306,26 @@ body {
   margin-top: 20px;
   padding: 10px;
   border-top: 2px solid var(--background-color);
+}
+@media only screen and (max-width: 900px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  .headerIcon {
+    display: none;
+  }
+
+  .sidebar {
+    width: 160px;
+    left: 16px;
+    top: 64px;
+    font-size: 1rem;
+  }
+  .sidebar span {
+    display: none;
+  }
+
+  .eventPageButton {
+    font-size: 1.5rem;
+  }
 }

@@ -29,6 +29,9 @@ const SideBar = () => {
     <div className="sidebar">
       <div className="categoryTitle">
         <h2>Categories</h2>
+        <span>
+          (Please select a category <br /> to see locations)
+        </span>
       </div>
       <ul>
         {categories &&
